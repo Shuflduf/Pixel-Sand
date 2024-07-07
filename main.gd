@@ -10,7 +10,7 @@ const SLIDE_CHECK = Vector2i(1, 1)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer += delta
-	if timer > 0.2:
+	if timer > 0.1:
 		timer = 0
 		var all_tiles = tile_map.get_used_cells(0) + tile_map.get_used_cells(1)
 		for cell in tile_map.get_used_cells(0):
