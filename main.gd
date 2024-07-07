@@ -13,7 +13,9 @@ func _process(delta: float) -> void:
 	if timer > 1:
 		timer = 0
 		for cell in tile_map.get_used_cells(0):
-			tile_map.set_cell(0, Vector2i(cell.x, cell.y + 1), 0, Vector2i(0, 0))
-			tile_map.erase_cell(0, cell)
+			if !Vector2i(cell.x, cell.y + 1) in tile_map.get_used_cells(0):
+				if !Vector2i(cell.x, cell.y + 1) in tile_map.get_used_cells(1):
+					tile_map.set_cell(0, Vector2i(cell.x, cell.y + 1), 0, Vector2i(0, 0))
+					tile_map.erase_cell(0, cell)
 					
 				
